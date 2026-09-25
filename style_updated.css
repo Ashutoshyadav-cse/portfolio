@@ -173,7 +173,7 @@ nav a{
 .item img{
     height: 48px;
     width: 48px;
-    filter: invert(73%) sepia(98%) saturate(1451%) hue-rotate(155deg) brightness(101%) contrast(101%); 
+    filter: invert(75%) sepia(50%) saturate(1000%) hue-rotate(150deg) brightness(110%) contrast(101%); 
     
    margin-bottom:15px;
 }
@@ -256,34 +256,13 @@ nav a{
 
 }
 
-/* project cards */
-.project{
-    min-height: 150px;
-    padding: 20px;
-    border: 2px solid #3a3a3a;
-    border-radius: 10px;
-    background-color: #1e1e1e;
-}
-
-@media (max-width: 900px){
-    .main-container{
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-    .sidebar{
-        height: auto;
-    }
-}
-
-@media (max-width: 600px){
-    .sidebar, .main-content{
-        padding: 25px;
-    }
-    nav{
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    .project-container{
-        grid-template-columns: 1fr;
-    }
-}
+/* Portfolio Projects */
+.project-container { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px; }
+.project { padding: 25px; border-radius: 12px; border: 1px solid #3a3a3a; background-color: #1e1e1e; transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+.project:hover { transform: translateY(-6px); border-color: #00d4ff; box-shadow: 0 8px 25px rgba(0,212,255,.12); }
+.project-icon { font-size: 2rem; margin-bottom: 12px; }
+.project h3 { color: #e0e0e0; font-size: 1.15rem; margin-bottom: 8px; }
+.project p { color: #a0a0a0; font-size: .92rem; margin-bottom: 15px; }
+.tech { display: inline-block; color: #00d4ff; font-size: .78rem; font-weight: 600; border: 1px solid #3a3a3a; border-radius: 6px; padding: 5px 8px; }
+@media (max-width: 900px) { .main-container { grid-template-columns: 1fr; gap: 20px; } .sidebar { min-height: auto; } }
+@media (max-width: 600px) { .project-container { grid-template-columns: 1fr; } }
